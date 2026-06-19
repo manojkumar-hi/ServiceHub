@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -66,33 +67,44 @@ public class RegisterActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             if (user != null) {
-                                user.sendEmailVerification()
-                                        .addOnCompleteListener(emailTask -> {
 
-                                            if (emailTask.isSuccessful()) {
+                                UserProfileChangeRequest profileUpdates =
+                                        new UserProfileChangeRequest.Builder()
+                                                .setDisplayName(name)
+                                                .build();
 
-                                                Toast.makeText(
-                                                        RegisterActivity.this,
-                                                        "Verification email sent. Please verify before login.",
-                                                        Toast.LENGTH_LONG
-                                                ).show();
+                                user.updateProfile(profileUpdates)
+                                        .addOnCompleteListener(profileTask -> {
 
-                                                mAuth.signOut();
+                                            user.sendEmailVerification()
+                                                    .addOnCompleteListener(emailTask -> {
 
-                                                startActivity(new Intent(
-                                                        RegisterActivity.this,
-                                                        MainActivity.class
-                                                ));
+                                                        if (emailTask.isSuccessful()) {
 
-                                                finish();
+                                                            Toast.makeText(
+                                                                    RegisterActivity.this,
+                                                                    "Verification email sent. Please verify before login.",
+                                                                    Toast.LENGTH_LONG
+                                                            ).show();
 
-                                            } else {
-                                                Toast.makeText(
-                                                        RegisterActivity.this,
-                                                        "Failed to send verification email",
-                                                        Toast.LENGTH_SHORT
-                                                ).show();
-                                            }
+                                                            mAuth.signOut();
+
+                                                            startActivity(new Intent(
+                                                                    RegisterActivity.this,
+                                                                    MainActivity.class
+                                                            ));
+
+                                                            finish();
+
+                                                        } else {
+
+                                                            Toast.makeText(
+                                                                    RegisterActivity.this,
+                                                                    "Failed to send verification email",
+                                                                    Toast.LENGTH_SHORT
+                                                            ).show();
+                                                        }
+                                                    });
                                         });
                             }
 

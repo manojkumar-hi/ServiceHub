@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="service_categories">
+        <item>Select Category</item>
+        <item>Electrician</item>
+        <item>Plumber</item>
+        <item>Painter</item>
+        <item>Carpenter</item>
+        <item>Mechanic</item>
+        <item>AC Technician</item>
+        <item>House Cleaner</item>
+        <item>Appliance Repair</item>
+    </string-array>
+
+</resources>

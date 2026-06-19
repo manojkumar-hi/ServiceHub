@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔧 Provider Application"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1E3A8A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select all services you can provide"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp" />
+
+        <CheckBox
+            android:id="@+id/cbElectrician"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electrician" />
+
+        <CheckBox
+            android:id="@+id/cbPlumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plumber" />
+
+        <CheckBox
+            android:id="@+id/cbPainter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Painter" />
+
+        <CheckBox
+            android:id="@+id/cbCarpenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carpenter" />
+
+        <CheckBox
+            android:id="@+id/cbMechanic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mechanic" />
+
+        <CheckBox
+            android:id="@+id/cbACTechnician"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AC Technician" />
+
+        <CheckBox
+            android:id="@+id/cbHouseCleaner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="House Cleaner" />
+
+        <CheckBox
+            android:id="@+id/cbApplianceRepair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appliance Repair" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF"
+            android:padding="14dp" />
+
+        <EditText
+            android:id="@+id/etBio"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="Tell customers about yourself"
+            android:gravity="top"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:padding="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aadhaar Verification (Required)"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/btnUploadAadhaar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Aadhaar PDF"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#2563EB"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvAadhaarStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No PDF selected"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Application"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#1E3A8A"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#F97316"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</ScrollView>
