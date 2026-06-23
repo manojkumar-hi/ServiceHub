@@ -73,14 +73,20 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp">
+            android:layout_margin="12dp"
+            app:startIconDrawable="@drawable/ic_search"
+            app:startIconTint="@color/textSecondary"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Search services or providers"
-                android:inputType="text"/>
+                android:inputType="text"
+                android:background="@drawable/search_bg"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -114,53 +120,70 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="8dp">
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp">
 
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardElectrician"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/electrician"
-                            android:contentDescription="Electrician"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Electrician"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/electrician"
+                                android:contentDescription="Electrician"/>
 
-                    <LinearLayout
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Electrician"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardPlumber"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/plumber"
-                            android:contentDescription="Plumber"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Plumber"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/plumber"
+                                android:contentDescription="Plumber"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Plumber"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
@@ -170,51 +193,68 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="8dp">
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp">
 
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardCarpenter"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/carpenter"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Carpenter"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/carpenter"/>
 
-                    <LinearLayout
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Carpenter"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardMechanic"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/mechanic"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mechanic"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/mechanic"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mechanic"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
@@ -224,51 +264,68 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="8dp">
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp">
 
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAc"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/ac_technician"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="AC Technician"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ac_technician"/>
 
-                    <LinearLayout
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AC Technician"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardRepair"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/repair"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Appliance Repair"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/repair"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Appliance Repair"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
@@ -278,51 +335,68 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="8dp">
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp">
 
-                    <LinearLayout
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardCleaner"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/cleaner"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Cleaner"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/cleaner"/>
 
-                    <LinearLayout
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cleaner"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardDriver"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@color/cardBackground"
-                        android:layout_margin="6dp">
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
 
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/driver"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/cardBackground">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Driver"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/driver"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Driver"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
@@ -396,7 +470,10 @@
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/bottom_nav_menu"/>
+            app:menu="@menu/bottom_nav_menu"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:itemTextColor="@color/bottom_nav_color"
+            android:background="@color/white"/>
 
     </LinearLayout>
 
@@ -411,24 +488,13 @@
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigationView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             app:itemIconTint="@color/primary"
             app:itemTextColor="@android:color/black"
             app:headerLayout="@layout/nav_header"
             app:menu="@menu/drawer_menu"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/ivDrawerFooter"/>
-
-        <ImageView
-            android:id="@+id/ivDrawerFooter"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:src="@drawable/toolbox_illustration"
-            android:scaleType="fitCenter"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

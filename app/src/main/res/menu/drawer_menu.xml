@@ -21,4 +21,19 @@
         android:icon="@drawable/ic_logout"
         android:title="Logout" />
 
+    <group android:id="@+id/grp_support">
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help"
+            android:title="Help &amp; Support" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info"
+            android:title="About App" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+    </group>
+
 </menu>

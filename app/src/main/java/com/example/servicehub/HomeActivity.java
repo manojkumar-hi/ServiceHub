@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -18,6 +19,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,8 +41,8 @@ public class HomeActivity extends AppCompatActivity {
     NavigationView navigationView;
     MaterialToolbar toolbar;
 
-    LinearLayout cardElectrician;
-    LinearLayout cardPlumber;
+    MaterialCardView cardElectrician;
+    MaterialCardView cardPlumber;
 
     TextView tvDrawerName;
     TextView tvDrawerEmail;
@@ -191,17 +193,14 @@ public class HomeActivity extends AppCompatActivity {
 
                 return true;
 
-            } else if (id == R.id.nav_bookings) {
+            }
+            else if (id == R.id.nav_bookings) {
 
-                Toast.makeText(
-                        this,
-                        "Bookings Screen Coming Soon",
-                        Toast.LENGTH_SHORT
-                ).show();
+            Intent intent = new Intent(HomeActivity.this, BookingActivity.class);
+            startActivity(intent);
 
-                return true;
-
-            } else if (id == R.id.nav_reviews) {
+            return true;
+        }else if (id == R.id.nav_reviews) {
 
                 Toast.makeText(
                         this,
