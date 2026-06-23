@@ -43,6 +43,12 @@ public class HomeActivity extends AppCompatActivity {
 
     MaterialCardView cardElectrician;
     MaterialCardView cardPlumber;
+    MaterialCardView cardCarpenter;
+    MaterialCardView cardMechanic;
+    MaterialCardView cardAc;
+    MaterialCardView cardRepair;
+    MaterialCardView cardCleaner;
+    MaterialCardView cardDriver;
 
     TextView tvDrawerName;
     TextView tvDrawerEmail;
@@ -78,6 +84,12 @@ public class HomeActivity extends AppCompatActivity {
 
         cardElectrician = findViewById(R.id.cardElectrician);
         cardPlumber = findViewById(R.id.cardPlumber);
+        cardCarpenter = findViewById(R.id.cardCarpenter);
+        cardMechanic = findViewById(R.id.cardMechanic);
+        cardAc = findViewById(R.id.cardAc);
+        cardRepair = findViewById(R.id.cardRepair);
+        cardCleaner = findViewById(R.id.cardCleaner);
+        cardDriver = findViewById(R.id.cardDriver);
 
 
 
@@ -155,32 +167,20 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setupServiceCards() {
+        cardElectrician.setOnClickListener(v -> openServiceDetail("Electrician"));
+        cardPlumber.setOnClickListener(v -> openServiceDetail("Plumber"));
+        cardCarpenter.setOnClickListener(v -> openServiceDetail("Carpenter"));
+        cardMechanic.setOnClickListener(v -> openServiceDetail("Mechanic"));
+        cardAc.setOnClickListener(v -> openServiceDetail("AC Technician"));
+        cardRepair.setOnClickListener(v -> openServiceDetail("Appliance Repair"));
+        cardCleaner.setOnClickListener(v -> openServiceDetail("Cleaner"));
+        cardDriver.setOnClickListener(v -> openServiceDetail("Driver"));
+    }
 
-        cardElectrician.setOnClickListener(v -> {
-
-            Intent intent =
-                    new Intent(
-                            HomeActivity.this,
-                            ProviderListActivity.class
-                    );
-
-            intent.putExtra("service", "Electrician");
-
-            startActivity(intent);
-        });
-
-        cardPlumber.setOnClickListener(v -> {
-
-            Intent intent =
-                    new Intent(
-                            HomeActivity.this,
-                            ProviderListActivity.class
-                    );
-
-            intent.putExtra("service", "Plumber");
-
-            startActivity(intent);
-        });
+    private void openServiceDetail(String serviceName) {
+        Intent intent = new Intent(HomeActivity.this, ServiceDetailActivity.class);
+        intent.putExtra("service_name", serviceName);
+        startActivity(intent);
     }
 
     private void setupBottomNavigation() {

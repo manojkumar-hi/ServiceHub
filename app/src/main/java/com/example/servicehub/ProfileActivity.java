@@ -2,6 +2,7 @@ package com.example.servicehub;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.bumptech.glide.Glide;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +19,7 @@ import java.util.Locale;
 public class ProfileActivity extends AppCompatActivity {
 
     TextView tvName, tvEmail, tvJoined;
+    ImageView imgProfile;
     Button btnBack, btnEditProfile;
 
     FirebaseAuth mAuth;
@@ -30,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         tvEmail = findViewById(R.id.tvEmail);
         tvJoined = findViewById(R.id.tvJoined);
+        imgProfile = findViewById(R.id.imgProfile);
 
         btnBack = findViewById(R.id.btnBack);
         btnEditProfile = findViewById(R.id.btnEditProfile);
@@ -59,6 +63,14 @@ public class ProfileActivity extends AppCompatActivity {
                             tvName.setText(name);
                             tvEmail.setText(email);
 
+                            String imageUrl = documentSnapshot.getString("profileImage");
+                            if (imageUrl != null && !imageUrl.isEmpty()) {
+                                Glide.with(ProfileActivity.this)
+                                        .load(imageUrl)
+                                        .placeholder(R.mipmap.ic_launcher_round)
+                                        .into(imgProfile);
+                            }
+
                             Date createdAt =
                                     documentSnapshot
                                             .getTimestamp("createdAt")
@@ -78,9 +90,7 @@ public class ProfileActivity extends AppCompatActivity {
         btnBack.setOnClickListener(v -> finish());
 
         btnEditProfile.setOnClickListener(v -> {
-
-            // Edit Profile later
-
+            startActivity(new android.content.Intent(ProfileActivity.this, EditProfileActivity.class));
         });
     }
 }

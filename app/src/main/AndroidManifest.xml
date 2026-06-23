@@ -45,6 +45,12 @@
         <activity
             android:name=".ProviderListActivity"
             android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ServiceDetailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
