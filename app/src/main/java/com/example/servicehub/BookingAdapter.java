@@ -4,8 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingViewHolder> {
@@ -19,17 +21,18 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
     @NonNull
     @Override
     public BookingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_booking, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_booking, parent, false);
         return new BookingViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
         BookingModel booking = bookingList.get(position);
-        holder.tvServiceName.setText(booking.getServiceName());
         holder.tvProviderName.setText(booking.getProviderName());
-        holder.tvDateTime.setText(booking.getDate() + " at " + booking.getTime());
-        holder.tvPrice.setText(booking.getPrice());
+        holder.tvServiceName.setText(booking.getServiceName());
+        holder.tvDate.setText(booking.getBookingDate());
+        holder.tvTime.setText(booking.getBookingTime());
         holder.tvStatus.setText(booking.getStatus());
     }
 
@@ -39,14 +42,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
     }
 
     static class BookingViewHolder extends RecyclerView.ViewHolder {
-        TextView tvServiceName, tvProviderName, tvDateTime, tvPrice, tvStatus;
+        TextView tvProviderName, tvServiceName, tvDate, tvTime, tvStatus;
 
         public BookingViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvServiceName = itemView.findViewById(R.id.tvServiceName);
             tvProviderName = itemView.findViewById(R.id.tvProviderName);
-            tvDateTime = itemView.findViewById(R.id.tvDateTime);
-            tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvServiceName = itemView.findViewById(R.id.tvServiceName);
+            tvDate = itemView.findViewById(R.id.tvDate);
+            tvTime = itemView.findViewById(R.id.tvTime);
             tvStatus = itemView.findViewById(R.id.tvStatus);
         }
     }

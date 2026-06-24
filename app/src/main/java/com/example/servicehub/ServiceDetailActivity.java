@@ -6,8 +6,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -20,6 +18,7 @@ public class ServiceDetailActivity extends AppCompatActivity {
     private TextView tvServiceName, tvPrice, tvDescription;
     private Button btnBookNow;
     private ImageButton btnBack;
+    private String serviceName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +36,11 @@ public class ServiceDetailActivity extends AppCompatActivity {
         handleIntentData();
 
         btnBack.setOnClickListener(v -> finish());
+        // Book Now starts the nearby providers step of the booking workflow
         btnBookNow.setOnClickListener(v -> {
-            Toast.makeText(this, "Booking feature coming soon!", Toast.LENGTH_SHORT).show();
-            // In a real app, this would navigate to a booking confirmation or payment screen
+            Intent intent = new Intent(ServiceDetailActivity.this, NearbyProvidersActivity.class);
+            intent.putExtra("serviceName", serviceName);
+            startActivity(intent);
         });
     }
 
@@ -53,8 +54,11 @@ public class ServiceDetailActivity extends AppCompatActivity {
     }
 
     private void handleIntentData() {
-        String serviceName = getIntent().getStringExtra("service_name");
-        
+        serviceName = getIntent().getStringExtra("serviceName");
+        if (serviceName == null) {
+            serviceName = getIntent().getStringExtra("service_name");
+        }
+
         if (serviceName != null) {
             tvServiceName.setText(serviceName);
             setServiceDetails(serviceName);
@@ -92,6 +96,16 @@ public class ServiceDetailActivity extends AppCompatActivity {
                 tvPrice.setText("$55 - $170");
                 tvDescription.setText("Air conditioning installation, servicing, and repair. Keep your home cool with our expert HVAC technicians.");
                 ivServiceImage.setImageResource(R.drawable.ac_technician);
+                break;
+            case "Appliance Repair":
+                tvPrice.setText("$50 - $160");
+                tvDescription.setText("Repair and maintenance for home appliances including refrigerators, washing machines, and microwaves.");
+                ivServiceImage.setImageResource(R.drawable.repair);
+                break;
+            case "Driver":
+                tvPrice.setText("$40 - $120");
+                tvDescription.setText("Professional driver services for personal trips, airport transfers, and hourly bookings.");
+                ivServiceImage.setImageResource(R.drawable.driver);
                 break;
             default:
                 tvPrice.setText("Price on Request");

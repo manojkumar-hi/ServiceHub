@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="12dp"
     app:cardElevation="4dp">
 
     <LinearLayout
@@ -14,53 +14,51 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tvServiceName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Service Name"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/tvProviderName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Provider Name"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvServiceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Service Name"
+            android:textColor="@color/textSecondary"
             android:textSize="14sp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:text="25 June 2026"
+            android:textColor="@color/textPrimary"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/tvDateTime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Date &amp; Time"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tvPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$0.00"
-                android:textColor="@color/primary"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="10:00 AM"
+            android:textColor="@color/textPrimary"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@android:color/holo_blue_light"
-            android:padding="4dp"
-            android:text="Status"
-            android:textColor="@android:color/white"
+            android:background="@color/primary"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="Pending"
+            android:textColor="@color/white"
             android:textSize="12sp" />
 
     </LinearLayout>

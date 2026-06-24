@@ -15,6 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceHub"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".CreateBookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProviderProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NearbyProvidersActivity"
+            android:exported="false" />
         <activity
             android:name=".BookingActivity"
             android:exported="false" />

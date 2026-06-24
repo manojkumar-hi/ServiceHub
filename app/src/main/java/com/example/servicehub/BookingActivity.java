@@ -47,6 +47,12 @@ public class BookingActivity extends AppCompatActivity {
         loadBookings();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadBookings();
+    }
+
     private void initViews() {
         rvBookings = findViewById(R.id.rvBookings);
         llEmptyState = findViewById(R.id.llEmptyState);
@@ -70,6 +76,9 @@ public class BookingActivity extends AppCompatActivity {
             return;
         }
 
+        progressBar.setVisibility(View.VISIBLE);
+
+        // Show only bookings belonging to the currently logged-in customer
         db.collection("bookings")
                 .whereEqualTo("customerId", userId)
                 .get()
@@ -79,9 +88,10 @@ public class BookingActivity extends AppCompatActivity {
                         bookingList.clear();
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             BookingModel booking = document.toObject(BookingModel.class);
+                            booking.setBookingId(document.getId());
                             bookingList.add(booking);
                         }
-                        
+
                         if (bookingList.isEmpty()) {
                             llEmptyState.setVisibility(View.VISIBLE);
                             rvBookings.setVisibility(View.GONE);
