@@ -179,7 +179,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private void openServiceDetail(String serviceName) {
         Intent intent = new Intent(HomeActivity.this, ServiceDetailActivity.class);
-        intent.putExtra("service_name", serviceName);
+        // Pass selected service name to the detail screen for the booking workflow
+        intent.putExtra("serviceName", serviceName);
         startActivity(intent);
     }
 
